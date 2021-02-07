@@ -1,0 +1,44 @@
+from tkinter import *
+
+root = Tk()
+buttonName=["1","5","10","20","50","100"]
+global totalPot
+totalPot = 0
+
+def butAct(value):
+    global totalPot
+    totalPot += value
+    print("Pot = ", totalPot)
+
+def clearPot():
+    global totalPot
+    totalPot = 0
+    print("Pot = ", totalPot)
+
+def initButton():
+    numOfChipButtons=len(buttonName)
+    print(numOfChipButtons)
+
+    chipButton1=Button(root,text="1",command=lambda *args: butAct(1))
+    chipButton1.pack()
+
+    chipButton5 = Button(root, text="5", command=lambda *args: butAct(5))
+    chipButton5.pack()
+
+    chipButton10 = Button(root, text="10", command=lambda *args: butAct(10))
+    chipButton10.pack()
+
+    chipButton20 = Button(root, text="20", command=lambda *args: butAct(20))
+    chipButton20.pack()
+
+    chipButton50 = Button(root, text="50", command=lambda *args: butAct(50))
+    chipButton50.pack()
+
+    chipButton100 = Button(root, text="100", command=lambda *args: butAct(100))
+    chipButton100.pack()
+
+    chipButtonClear = Button(root, text="Clear", command=lambda *args: clearPot())
+    chipButtonClear.pack()
+
+initButton()
+root.mainloop()
